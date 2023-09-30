@@ -1,15 +1,13 @@
 #!/bin/bash
 VERSION="1.24.0"
 echo ********************************建议使用 Rocky Linux 9 最新版本并使用 root 用户执行本脚本********************************
-sleep 5s
 echo ********************************即将开始安装并开机启动 Nginx 1.24.0********************************
-sleep 5s
+sleep 3s
 systemctl disable --now firewalld
 sed -ri 's/^(SELINUX=).*/\1disabled/' /etc/selinux/config
-mkdir /apps
-mkdir /apps/nginx-$VERSION
+mkdir -p /apps/nginx-$VERSION
 dnf -y upgrade
-dnf -y install wget tar gcc pcre-devel zlib-devel
+dnf -y install wget tar gcc pcre-devel zlib-devel openssl-devel
 cd /usr/local/src || exit
 wget http://nginx.org/download/nginx-$VERSION.tar.gz
 tar xvf nginx-$VERSION.tar.gz
