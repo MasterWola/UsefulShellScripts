@@ -18,6 +18,7 @@ chmod a+x start.sh
 sed -i '3c\eula=true' eula.txt
 sed -i '23c\online-mode=false' server.properties
 cd /minecraft/server || exit
+echo ****************Minecraft Spigot 1.19.4 服务器已部署完成****************
 echo ****************输入./start.sh以启动您的 Minecraft Spigot 1.19.4 服务器****************
 echo ****************启动后在游戏中输入服务器的IP地址以访问 Minecraft 世界****************
 echo ****************有任何问题请告诉我:https://space.bilibili.com/3493134526843502****************
